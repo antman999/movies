@@ -1,21 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Input } from 'semantic-ui-react';
 
-class SearchBar extends Component {
- state = {
-  search: '',
- };
-  
- handleSearch = e => {
-	this.setState({ search: e.target.value });
- };
-  
- render() {
+const SearchBar = ({onChange, value}) => {
   return (
-    <div>
-	<input onChange={this.handleSearch} value={this.state.search} />
-    </div>
-   );
-  }
- }
+	 <div>
+	  <Input
+		 onChange={onChange}
+		 value={value}
+		 icon='search'
+		 placeholder='Type a movie..'
+		/>
+	 </div>
+ );
+}
 
 export default SearchBar
