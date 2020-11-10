@@ -10,12 +10,12 @@ class SearchBar extends Component {
  };
   
  render() {
-	return (
-	 <div>
-		<input onChange={this.handleSearch} value={this.state.search} />
-	 </div>
-	);
+  return (
+    <div>
+	<input onChange={this.handleSearch} value={this.state.search} />
+    </div>
+   );
+  }
  }
-}
 
 export default SearchBar
