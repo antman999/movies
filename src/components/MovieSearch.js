@@ -5,7 +5,7 @@ const MovieSearch = ({ userSearch }) => {
    console.log(userSearch)
     return (
       <div>
-        <Grid columns={6} stackable>
+        <Grid columns={4} stackable>
           {userSearch.map(results => (
             <MovieResults {...results}/>
          ))}

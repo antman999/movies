@@ -1,14 +1,16 @@
 import React from 'react'
-import { Input, Icon } from 'semantic-ui-react';
+import { Input, Icon,Button } from 'semantic-ui-react';
 
 const SearchBar = ({onChange, value, handleSubmit}) => {
  return (
-		<div>
-			<form onSubmit={handleSubmit}>
-				<Input onChange={onChange} value={value} placeholder='Type a movie..' />
-			  <button type='submit' icon='search'/>
-			</form>
-		</div>
+<div>
+  <form onSubmit={handleSubmit}>
+    <Input onChange={onChange} value={value} placeholder='Type a movie..' />
+    <Button icon type='submit'>
+    <Icon name='search' />
+    </Button>
+  </form>
+</div>
  );
 }
 
