@@ -5,16 +5,17 @@ import MovieSearch from './components/MovieSearch';
 import PlaceholderCards from './components/PlaceholderCards';
 class App extends Component {
  
-  state = {
-		search: '',
-		movies: [],
-  };
+state = {
+  search: '',
+  movies: [],
+ };
   
  handleSearch = e => {this.setState({ search: e.target.value })};
   
  handleSubmit = e => {
   let { search } = this.state
-  e.preventDefault()
+  
+  e.preventDefault()	 
   fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?s=${search}&page=1`,
    {method: 'GET',
     headers: {
@@ -27,22 +28,22 @@ class App extends Component {
   .then(resp => this.setState({ movies: resp.Search}));
  };
 
-  render() {
-		return (
-			<div className='App'>
-				<div className='searchbar'>
-          <SearchBar onChange={this.handleSearch} value={this.state.search} handleSubmit={this.handleSubmit}/>
-				</div>
-				<div>
-					{this.state.movies.length? (
-						<MovieSearch userSearch={this.state.movies} />
-					) : (
-						<PlaceholderCards />
-					)}
-				</div>
-			</div>
-		);
-	}
+ render() {
+   return (
+   <div className='App'>
+    <div className='searchbar'>
+      <SearchBar onChange={this.handleSearch} value={this.state.search} handleSubmit={this.handleSubmit}/>
+    </div>
+    <div>
+      {this.state.movies.length? (
+       <MovieSearch userSearch={this.state.movies} />
+	 ) : (
+       <PlaceholderCards />
+	 )}
+       </div>
+      </div>
+      );
+   }
 }
 
 export default App;
