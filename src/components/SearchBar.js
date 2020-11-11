@@ -1,23 +1,21 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react';
+import { Input, Icon } from 'semantic-ui-react';
 
-const SearchBar = ({onChange, value}) => {
+const SearchBar = ({onChange, value, handleSubmit}) => {
  return (
-  <div>
-	 <Input
-	 onChange={onChange}
-	 value={value}
-	 icon='search'
-	 placeholder='Type a movie..'
-	 />
-  </div>
+		<div>
+			<form onSubmit={handleSubmit}>
+				<Input onChange={onChange} value={value} placeholder='Type a movie..' />
+			  <button type='submit' icon='search'/>
+			</form>
+		</div>
  );
 }
 
 export default SearchBar
 
-//Here im using a functional component because im holding state on the app level to pass down to our movies search. 
+//Here im using a functional component because im holding state on the app level. No need to use a class component if we don't need state here 
 
 //I de-structured props to avoid using 'props.' just need the values I passed down. If further properties are needed add them above. 
 
-//I imported the Input component from semantic for Styling. 
+//Im using Semantic's UI' Input component for styling here. . 
